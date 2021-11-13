@@ -1,42 +1,213 @@
-# html-resume
-A single-page résumé template done purely with HTML and CSS, which can be rendered into PDF through web browsers' print-to-PDF functionality, making a nice, sleek, professsional and ready-to-print résumé. See my living example at: https://mnjul.net/cv/resume.pdf
-
-As the résumé is purely typeset with HTML and CSS, it's highly customizable (e.g. if you want an "objective" section, just copy-paste a few HTML elements) and does not require proprietary software. All you need is a text editor and a web browser (see compatibility section below). Oh, maybe some intermediate CSS knowledge. And, since it's open source with Apache License, you're allowed (and encouraged!) to create your own fine-tuned template and share with others.
-
-Find the background story of this project at [my blog](https://blogs.purincess.tw/matrixblog/2016/04/typesetting-resume-with-html-and-css/).
-
-# Compatibility and Known Issues/Limitations
-* I have only tested this project on latest release version of Firefox (56 as of writing) and Google Chrome (61) on macOS 10.13 (High Sierra).
-* It's my intention to support other browsers/platforms (like IE Edge on Windows?) as long as the browser sufficiently supports the required CSS features: ``calc()``, ``var()``, ``flexbox``, ...etc, and does not require (too many) dirty tricks. PRs or comments welcome!
-* **No hyperlinking functionality in rendered PDF** as browers's print-to-PDF process is merely "flattening to digital paper".
-* Other browser-specific hacks are as commented in the code.
-
-# Fonts, Icon Fonts, and Dependencies
-* [Open Sans](https://www.google.com/fonts/specimen/Open+Sans), [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) and [Source Sans Pro](https://www.google.com/fonts/specimen/Source+Sans+Pro) are used at various weights, but are not included in this repository. Please follow the links to download the fonts onto your computer.
-* Icons from [Font Awesome](https://fortawesome.github.io/Font-Awesome/) are used and are incorporated as a git submodule in this repository.
-* [Normalize.css](https://necolas.github.io/normalize.css/) is used and is incorporated as a git submodule in this repository.
-
-# Paper Size/Orientation
-* Currently letter portrait only. PRs welcome for other paper sizes --- especially A4!
-
-# Actually Rendering the PDF
-* Again...I've only tried on the said version of Firefox & Chrome, on macOS.
-* Just open the HTML file with the browser. No need to serve the document from any kind of web server --- the ``file:///`` protocol should be good enough.
-* On Firefox:
-  * You probably need to remove any page margins in **about:config**.
-  * Uncheck **Ignore Scaling and Shrink To Fit Page Width**.
-  * Check **Print Background Colors**.
-  * Clear out the headers and footers.
-  * Save as PDF.
-* On Google Chrome:
-  * Set **Margin** to **None**.
-  * Print **Background Graphics**.
-  * Don't print headers and footers.
-  * Save as PDF.
-
-# Footnotes and License
-* If you ever print out the rendered PDF, make sure texts are not clipped off, or items have not unexpectedly shrunk. Additionally, since the PDF has no margin outside the shaded sidebar, while most printers have no-print areas, the shaded sidebar probably won't fill up to the page's edge when printed.
-* This project is licensed under the Apache License.
-* PR, forks and other comments/suggestions are, as always, super welcome.
-* Feel free to remove the ``#disclaimer`` block which links back to this repository --- but huge thanks if you decide to keep it.
-* The layout/design was inspired by Paolo Zupin. Also, if anyone knows which link I should put under Mr. Zupin's name, please tell me!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="dep/Font-Awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body lang="en">
+    <section id="main">
+      <header id="title">
+        <h1>Erik Dell</h1>
+        <span class="subtitle">Java Developer / Student</span>
+      </header>
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-suitcase"></i> Experiences
+        </h2>
+        <section class="blocks">
+          <div class="date">
+            <span>present</span><span>2019</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Java Student</h3>
+              <span class="place">Mar del Plata, Argentina</span>
+              <span class="location">
+              </span>
+            </header>
+            <div>
+              <ul>
+                <li>I'm working on my Java Roadmap, looking for my first Java Job opportunity. I'm open to work <br>
+                  on an internship in a Trainee Position. My main goal right now is to streghten my Development Skills.</li>
+              </ul>
+              </div>
+          </div>
+        </section>
+      </section>
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-folder-open"></i> Selected Projects
+        </h2>
+        <section class="blocks">
+          <div class="date">
+            <span>2021</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>CHALLENGE BACKEND - Java Spring Boot (API) (On progress)</h3>
+              <span class="place">Alkemy</span>
+            </header>
+            <div>
+              <ul>
+                <li>SpringREST. Spring Security. Persistance using Hibernate-MySQL</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="blocks">
+          <div class="date">
+            <span>2021</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3><a href="https://github.com/dellmdq/thymeleafdemo">SpringBoot Demo with Thymeleaf Template</a></h3>
+              <span class="place">Udemy Spring Course</span>
+            </header>
+            <div>
+              <ul>
+                <li>Final SpringREST CRM. Using SpringDATA and Thymeleaf Templates</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="blocks">
+          <div class="date">
+            <span>2020</span>
+          </div>
+          <div class="decorator">
+          </div>  
+          <div class="details">
+            <header>
+              <h3><a href="https://github.com/dellmdq/MovieMDQ">MoviesMDQ - Final Project of the Programming Technician Degree</a></h3>
+              <span class="place">UTN</span>
+            </header>
+            <div>
+              <ul>
+                <li>PHP. Javascript. MySQL. Cinema Management WebApp</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="main-block concise">
+        <h2>
+          <i class="fa fa-graduation-cap"></i> Education
+        </h2>
+        <section class="blocks">
+          <div class="date">
+            <span>2022</span><span>2020</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Tecnicatura Universitaria en Sistemas Informáticos</h3>
+              <span class="place">Universidad Tecnológica Nacional</span>
+              <span class="location">Mar del Plata, Argentina</span>
+            </header>
+            <div>Java Spring. MySQL. Transactions and Locking. Indexes and Optimization. (1st Semester)<br></div>
+          </div>
+        </section>
+        <section class="blocks">
+          <div class="date">
+            <span>2020</span><span>2018</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Tecnicatura Universitaria en Programación</h3>
+              <span class="place">Universidad Tecnológica Nacional</span>
+              <span class="location">Mar del Plata, Argentina</span>
+            </header>
+                <div> C. Algorithms and Data Structures. (1st Year)<br> 
+                    Java and Data Persistance with MySQL. (3rd Semester)<br>
+                    HTML. CSS. PHP. Data Persistance with MySQL. (4th Semester)
+                </div>
+          </div>
+        </section>
+        <section class="blocks">
+          <div class="date">
+            <span>2017</span><span>2007</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Licenciatura en Economía (Thesis Pending)</h3>
+              <span class="place">Universidad Nacional de Mar del Plata</span>
+              <span class="location">Mar del Plata, Argentina</span>
+            </header>
+            <div></div>
+          </div>
+        </section>
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Courses</h3>
+            </header>
+            <div class="concise">
+              <ul>
+                <li><a href="https://www.udemy.com/course/git-complete/">Git Complete: The definitive, step-by-step guide to Git</a></li>
+                <li><a href="https://www.udemy.com/course/spring-hibernate-tutorial/"> Spring & Hibernate for Beginners (includes Spring Boot)</a></li>
+                <li><a href="https://www.udemy.com/course/curso-completo-junit-mockito-spring-boot-test/">Guía Completa JUnit y Mockito incluye Spring Boot</a> </li>
+                <li><a href="https://www.youtube.com/watch?v=VRpHdSFWGPs">Java Functional Programming | Full Course | 2020</a> </li>
+                <li><a href="https://www.freecodecamp.org/news/spring-boot-tutorial/">Spring Boot Tutorial</a></li>  
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+    <aside id="sidebar">
+      <div class="side-block" id="contact">
+        <h1>
+          Contact Info
+        </h1>
+        <ul>
+          <li ><a href="https://www.linkedin.com/in/dellmdq/"><i class="fa fa-linkedin"></a></i> linkedin.com/in/dellmdq</li>
+          <li><a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa fa-envelope"></a></i> erikdell@gmail.com</li>
+          <li><a href="https://github.com/dellmdq" ><i class="fa fa-suitcase"></a></i> github.com/dellmdq </li>
+          
+        </ul> 
+      </div>
+      <div class="side-block" id="skills">
+        <h1>
+          Skills
+        </h1>
+        <ul>
+          <li>Java 1.8.</li>
+          <li>Spring. MVC. Rest. Security.</li>
+          <li>Functional Programming.</li>
+          <li>Junit.</li>
+          <li>AOP.</li>
+          <li>MySQL. JDBC. Hibernate.</li>
+          <li>Git-Hub.</li>
+        </ul>
+        <hr>
+        <ul>
+          <li>- Fluent in English. (B2/C1)</li>
+          <li>- TeamPlayer.</li>
+          <li>- Self-Taught, curious. Always <br>trying to learn something new and helping where I can.</li>
+          <li>- Passionate about Computer Science and Programming <br> in general.</li>
+          <li>- Can work under pressure.</li>
+        </ul>
+      </div>
+      <div class="side-block" id="disclaimer">
+        This resume template; was wholly typeset with HTML/CSS &mdash; Taken from <code>git.io/vVSYL</code>
+      </div>
+    </aside>
+  </body>
+</html>
