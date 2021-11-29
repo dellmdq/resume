@@ -1,7 +1,5 @@
 # resume
-Resume
-
-To view resume download Resume.html
+Resume link: https://github.com/dellmdq/resume/blob/master/resume.html
 
 Regards,
 Erik
